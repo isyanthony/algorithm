@@ -1,0 +1,1 @@
+print(f"Python%s"%(" Hello World"))
