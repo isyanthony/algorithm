@@ -1,3 +1,13 @@
 {
-    "java.project.sourcePaths": []
+    "java.project.sourcePaths": [
+        "Acwing"
+    ],
+    "files.associations": {
+        "cmath": "cpp",
+        "stack": "cpp",
+        "map": "cpp",
+        "string_view": "cpp",
+        "streambuf": "cpp"
+    },
+    "C_Cpp.errorSquiggles": "Enabled"
 }
