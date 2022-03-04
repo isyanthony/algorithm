@@ -18,15 +18,16 @@ public class Main {
         int n, m, x;
         int[] arrN = new int[N];
         Map<Integer, Integer> map = new HashMap<>(N);
-        Scanner sc = new Scanner(System.in);
-        n = sc.nextInt();
-        m = sc.nextInt();
-        x = sc.nextInt();
-        for (int i = 0; i < n; i++) {
-            arrN[i] = sc.nextInt();
-        }
-        for (int i = 0; i < m; i++) {
-            map.put(sc.nextInt(), i);
+        try (Scanner sc = new Scanner(System.in)) {
+            n = sc.nextInt();
+            m = sc.nextInt();
+            x = sc.nextInt();
+            for (int i = 0; i < n; i++) {
+                arrN[i] = sc.nextInt();
+            }
+            for (int i = 0; i < m; i++) {
+                map.put(sc.nextInt(), i);
+            }
         }
         for (int i = 0; i < n; i++) {
             if (map.get(x - arrN[i]) != null) {
@@ -45,15 +46,16 @@ public class Main {
         int n, m, x;
         int[] arrN = new int[N];
         int[] arrM = new int[N];
-        Scanner sc = new Scanner(System.in);
-        n = sc.nextInt();
-        m = sc.nextInt();
-        x = sc.nextInt();
-        for (int i = 0; i < n; i++) {
-            arrN[i] = sc.nextInt();
-        }
-        for (int i = 0; i < m; i++) {
-            arrM[i] = sc.nextInt();
+        try (Scanner sc = new Scanner(System.in)) {
+            n = sc.nextInt();
+            m = sc.nextInt();
+            x = sc.nextInt();
+            for (int i = 0; i < n; i++) {
+                arrN[i] = sc.nextInt();
+            }
+            for (int i = 0; i < m; i++) {
+                arrM[i] = sc.nextInt();
+            }
         }
         int j = m - 1;
         for (int i = 0; i < n; i++) {

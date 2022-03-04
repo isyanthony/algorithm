@@ -9,22 +9,23 @@ public class Main {
     static int head = -1 , idx = 0 , n , pos , x;
     static  String op;
     public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
-        n = sc.nextInt();
-        while(n-- > 0){
-            op = sc.next();
-            if("H".equals(op)){
-                x = sc.nextInt();
-                insertHead(x);
-            }else if("I".equals(op)){
-                pos = sc.nextInt();
-                x = sc.nextInt();
-                insert(pos, x);
-            }else{
-                pos = sc.nextInt();
-                remove(pos);
-            }
+        try (Scanner sc = new Scanner(System.in)) {
+            n = sc.nextInt();
+            while(n-- > 0){
+                op = sc.next();
+                if("H".equals(op)){
+                    x = sc.nextInt();
+                    insertHead(x);
+                }else if("I".equals(op)){
+                    pos = sc.nextInt();
+                    x = sc.nextInt();
+                    insert(pos, x);
+                }else{
+                    pos = sc.nextInt();
+                    remove(pos);
+                }
 
+            }
         }
         int i = head;
         while(i != -1){

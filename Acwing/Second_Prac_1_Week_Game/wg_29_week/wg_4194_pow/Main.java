@@ -10,9 +10,10 @@ public class Main {
 
     static final double basic = 1.00011;
     public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
-        n = sc.nextInt();
-        t = sc.nextInt();
+        try (Scanner sc = new Scanner(System.in)) {
+            n = sc.nextInt();
+            t = sc.nextInt();
+        }
         res = methodOne(n, t);
         System.out.printf("%6f", res);
     }

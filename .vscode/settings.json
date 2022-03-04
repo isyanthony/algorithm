@@ -1,6 +1,7 @@
 {
     "java.project.sourcePaths": [
-        "Acwing"
+        "Acwing",
+        "Leetcode"
     ],
     "files.associations": {
         "cmath": "cpp",

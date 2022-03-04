@@ -13,35 +13,36 @@ public class Main {
         l[1] = 0;
         r[0] = 1;
 
-        Scanner sc = new Scanner(System.in);
-        int m , pos , x;
-        String op;
-        m = sc.nextInt();
-        while(m-- > 0){
-            op = sc.next();
-            switch(op){
-                case "R" :
-                    x = sc.nextInt();
-                    insert(l[1], x);
-                    break;
-                case "L":
-                    x = sc.nextInt();
-                    insert(0, x);
-                    break;
-                case "D":
-                    pos = sc.nextInt();
-                    remove(pos);
-                    break;
-                case "IR":
-                    pos = sc.nextInt();
-                    x = sc.nextInt();
-                    insert(pos + 1, x);
-                    break;
-                default: 
-                    pos = sc.nextInt();
-                    x = sc.nextInt();
-                    insert(l[pos + 1] , x);
+        try (Scanner sc = new Scanner(System.in)) {
+            int m , pos , x;
+            String op;
+            m = sc.nextInt();
+            while(m-- > 0){
+                op = sc.next();
+                switch(op){
+                    case "R" :
+                        x = sc.nextInt();
+                        insert(l[1], x);
+                        break;
+                    case "L":
+                        x = sc.nextInt();
+                        insert(0, x);
+                        break;
+                    case "D":
+                        pos = sc.nextInt();
+                        remove(pos);
+                        break;
+                    case "IR":
+                        pos = sc.nextInt();
+                        x = sc.nextInt();
+                        insert(pos + 1, x);
+                        break;
+                    default: 
+                        pos = sc.nextInt();
+                        x = sc.nextInt();
+                        insert(l[pos + 1] , x);
 
+                }
             }
         }
         int i = r[0];

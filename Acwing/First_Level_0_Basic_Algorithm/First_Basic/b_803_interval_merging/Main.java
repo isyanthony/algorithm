@@ -1,7 +1,6 @@
 package First_Level_0_Basic_Algorithm.First_Basic.b_803_interval_merging;
 
 import java.util.ArrayList;
-import java.util.Collection;
 import java.util.Collections;
 import java.util.List;
 import java.util.Scanner;
@@ -13,14 +12,14 @@ public class Main{
 
     static List<Pair> res =new ArrayList<>();
     public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
-        n = sc.nextInt();
-        while(n-- > 0){
-            f = sc.nextInt();
-            s = sc.nextInt();
-            list.add(new Pair(f,s));
+        try (Scanner sc = new Scanner(System.in)) {
+            n = sc.nextInt();
+            while(n-- > 0){
+                f = sc.nextInt();
+                s = sc.nextInt();
+                list.add(new Pair(f,s));
+            }
         }
-
         Collections.sort(list , (a , b) -> {
             Pair  p1 = (Pair)a;
             Pair  p2 = (Pair)b;
