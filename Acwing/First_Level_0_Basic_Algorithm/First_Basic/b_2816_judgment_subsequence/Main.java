@@ -1,4 +1,4 @@
-package First_Level_0_Basic_Algorithm.First_Basic.b_2816_judgment_subsequence;
+// package First_Level_0_Basic_Algorithm.First_Basic.b_2816_judgment_subsequence;
 
 import java.util.Scanner;
 
@@ -8,7 +8,8 @@ public class Main {
     static int [] a= new int[N];
     static int [] b= new int[N];
     public static void main(String[] args) {
-        methodOne();
+        // methodOne();
+        System.out.println("Hello World!");
     }
 
     /**
