@@ -13,7 +13,7 @@ public class Main {
     }
 
     /**
-     * Accept
+     * Acceptz
      * Two point Algorithm
      */
     public static void methodOne(){

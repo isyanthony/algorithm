@@ -4,7 +4,7 @@ import "fmt"
 
 func main(){
 	// N := 100010
-	// var n , m int
+	var n int
 	// var a , b [] int
 
 	// a = make([]int, N)
@@ -31,6 +31,7 @@ func main(){
 	// }else{
 	// 	fmt.Print("No")
 	// }
+	fmt.Scan(&n)
 	fmt.Println("Hello!!")
 	fmt.Println("Hello World!!")
 }

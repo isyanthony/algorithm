@@ -1,7 +1,3 @@
-package First_Level_0_Basic_Algorithm.Third_SearchAndMap.sm_841_sort_number;
-
-
-
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;

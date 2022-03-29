@@ -72,7 +72,6 @@ int main(){
         scanf("%d" , &a[i]);
     
     buildTree(1 , 1 , n);
-
     for(int i = 1 ; i <= m ; i++){
         int k , x , y;
         scanf("%d%d%d",&k , &x , &y);

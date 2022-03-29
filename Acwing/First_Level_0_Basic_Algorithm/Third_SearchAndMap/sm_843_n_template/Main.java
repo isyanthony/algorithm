@@ -1,6 +1,3 @@
-package First_Level_0_Basic_Algorithm.Third_SearchAndMap.sm_843_n_template;
-
-
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
@@ -16,6 +13,7 @@ public class Main{
     static boolean [] col = new boolean[N];
 
     public static void main(String[] args) throws IOException {
+        // System.out.println("Hello World");
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         n = Integer.valueOf(br.readLine());
         dfs(0 , 0 , 0);
