@@ -44,7 +44,7 @@ public class Main {
 		for(int i = 1 ; i <= n ; i++) Arrays.fill(g[i] , 0x3f3f);
 		while(m-- > 0){
 			int a = sc.nextInt(); int b = sc.nextInt(); int c = sc.nextInt();
-			g[a][b] = Maht.Math.min(g[a][b], c);
+			g[a][b] = Math.min(g[a][b], c);
 		}
 		System.out.println(dijkstra());
 	}
