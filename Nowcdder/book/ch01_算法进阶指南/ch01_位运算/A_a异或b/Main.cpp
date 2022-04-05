@@ -6,7 +6,7 @@ typedef long long ll;
 int power(int a , int b , int p){
     int ans = 1;
 
-    //当b不为 0  
+    // 当b不为 0  
     while(b){
         // 判断b二进制最低位是否为 1
         if(b & 1) ans = (ll) ans * a % p;

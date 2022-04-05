@@ -1,50 +1,54 @@
 #include<bits/stdc++.h>
+# define int long long
 using namespace std;
-const int N = 1510;
-typedef pair<int , int> PII;
+const int MOD = 998244353;
+const int N = 20;
+string s[N];
+int ch[27];
 
-char m[N][N];
-bool vt[N][N];
-int n , res;
-int x , y , s , t;
-queue<pair<int , PII>> q;
-
-int bfs(){
-	int dx [] = {1 , -1  , 1 , -1};
-	int dy [] = {1 , 1 , -1 , -1};
-	q.push({0 , {x , y}});
-	vt[x][y] = true;
-	while(q.size()){
-		auto p = q.front();
-		q.pop();
-		int step = p.first , aa = p.second.first , bb = p.second.second;
-		if(aa == s && bb == t) return step;
-		for(int i = 0 ; i < 4 ; i++){
-			int a = aa , b = bb;
-			while(m[a][b] != '#' && a >= 0 && a <= n - 1 && b >= 0 && b <= n - 1){
-				if(!vt[a][b]){
-					vt[a][b] = true;
-					q.push({step + 1 ,{a , b}});
-				}
-				a += dx[i] , b += dy[i];
-			}
-		}
+int Pow(int x , int n) {
+	int ans = 1;
+	while(n) {
+		if(n & 1) ans = ans * x % MOD;
+		n >>= 1;
+		x = x * x % MOD;
 	}
-	return -1;
+	return ans % MOD;
 }
 
-int main(){
 
-	scanf("%d" , &n);
-	scanf("%d%d" , &x , &y);
-	scanf("%d%d" , &s , &t);
-	x-- , y-- , s-- , t--;
-	for(int i = 0 ; i < n ; i++){
-		 scanf("%s" , m[i]);
+signed main() {
+	int n , l;
+	cin >> n >> l;
+	for(int i = 0 ; i < n ; i++) cin >> s[i];
+
+	int ans = 0;
+	// 枚举字符串的状态
+	for(int mask = 1 ; mask < (1 << n) ; mask++){
+		// 初始化单个字符数量
+		memset(ch , 0 , sizeof ch);
+		// 记录有多少个集合杯选中
+		int cnt = 0;
+		// 遍历集合
+		for(int i = 0 ; i < n ; i++){
+			// 判断此集合是否被选中
+			if(mask >> i & 1){
+				cnt++;
+				//将字符读入
+				for(auto c : s[i]) ch[c - 'a']++;
+			}
+		}
+		int res = 0;
+		for(int i = 0 ; i < 26 ; i++)
+			// 判断选中集合中都存在的字符
+			if(ch[i] == cnt) res++;
+
+		int pow = Pow(res , l);
+		// 通过容斥原理进行计算
+		if(cnt & 1) (ans += pow) %= MOD;
+		else (ans -= pow) %= MOD , ans = (ans + MOD) % MOD;
 	}
 
-	res = bfs();
-	cout << res << endl;
+	cout << ans << endl;	
 	return 0;
-
 }
