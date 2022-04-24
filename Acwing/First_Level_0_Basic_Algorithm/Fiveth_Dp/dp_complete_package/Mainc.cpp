@@ -24,11 +24,12 @@ int main(){
 
 
 // 递推
-// f[i][j] 		= max(  f[i][j] , f[i - 1][j - w] + a , f[i - 1][j - 2 * w] + 2 * a , ··· , f[i - 1][j - k * w] + k * a)
-// f[i][j - w]  = max(	 		 f[i - 1][j - w] , f[i - 1][j - 1 * w]  , f[i - 1][j - 2 * w] + a , ··· , f[i - 1][j - k * w] + (k - 1) * a)	
+// f[i][j] 		= max(  f[i - 1][j] , f[i - 1][j - w] + a , f[i - 1][j - 2 * w] + 2 * a , ··· , f[i - 1][j - k * w] + k * a , ···)
+// f[i][j - w]  = max(	f[i - 1][j - w] , f[i - 1][j - 2 * w] + a , ··· , f[i - 1][j - k * w] + (k - 1) * a , ···)	
 
-// 故 f[i][j] = max(f[i][j - w] + a , f[i][j]);
-
+// 故 f[i][j] = max(f[i][j - w] + a , f[i - 1][j]);
+// 如果优化到一维 那么f[i][j] 存储的为上一轮 f[i - 1][j] 那么式子可以进一步优化
+// f[j] = max(f[j - w] + a + f[j]);
 
 // 一维dp
 // #include<iostream>

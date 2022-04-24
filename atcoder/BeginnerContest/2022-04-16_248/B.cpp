@@ -10,10 +10,20 @@ using namespace std;
 #define per(i , a , b) for(int i=a;i>=b;i--)
 const int INF = 0x3f3f3f3f;
 const int MINF = 0x3f;
-const double EPS = 1e-6;
 
+LL a , b , k;
 int main(){
 	FAST;
-	
+	cin >> a >> b >> k;
+	if(b <= a){
+		cout << 0 << endl;
+		return 0;
+	}
+	LL ans = 0LL;
+	while(a < b){
+		a *= k;
+		ans++;
+	}
+	cout << ans << endl;
 	return 0;
 }

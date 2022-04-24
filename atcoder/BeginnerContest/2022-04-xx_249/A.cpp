@@ -10,10 +10,3 @@ using namespace std;
 #define per(i , a , b) for(int i=a;i>=b;i--)
 const int INF = 0x3f3f3f3f;
 const int MINF = 0x3f;
-const double EPS = 1e-6;
-
-int main(){
-	FAST;
-	
-	return 0;
-}

@@ -8,12 +8,6 @@ using namespace std;
 #define FAST ios::sync_with_stdio(false) , cin.tie(0) , cout.tie(0)
 #define rep(i , a , b) for(int i=a;i<=b;i++)
 #define per(i , a , b) for(int i=a;i>=b;i--)
+const int eps = 1e-6;
 const int INF = 0x3f3f3f3f;
 const int MINF = 0x3f;
-const double EPS = 1e-6;
-
-int main(){
-	FAST;
-	
-	return 0;
-}

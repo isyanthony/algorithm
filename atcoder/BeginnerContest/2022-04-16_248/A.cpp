@@ -10,10 +10,16 @@ using namespace std;
 #define per(i , a , b) for(int i=a;i>=b;i--)
 const int INF = 0x3f3f3f3f;
 const int MINF = 0x3f;
-const double EPS = 1e-6;
 
+int a[10];
 int main(){
-	FAST;
-	
+	string s;
+	cin >> s;
+	rep(i , 0 , s.size() - 1) a[s[i] - '0']--;
+	rep(i , 0 , 9)	
+		if(a[i] == 0){
+			cout << i << endl;
+			break;
+		}
 	return 0;
 }
