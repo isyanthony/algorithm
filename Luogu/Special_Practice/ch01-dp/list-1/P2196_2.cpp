@@ -16,12 +16,14 @@ int a[N] , res[N], g[N][N] , path[N];
 bool st[N];
 int n , Max , cnt;
 
+// 检查某个点是否还有联通的点
 bool check(int now) {
     rep(i , now + 1, n)
-    if (g[now][i]) return true;
+        if (g[now][i]) return true;
     return false;
 }
 
+// dfs(当前到的点 , 步数  , 炸弹数量)
 void dfs(int now , int step , int sum) {
     if (!check(now)) {
         if (Max < sum) {
@@ -32,8 +34,10 @@ void dfs(int now , int step , int sum) {
         return;
     }
     rep(i , now , n) {
+        // 如果能走 并且 没有走过
         if (g[now][i] && !st[i]) {
             st[i] = true;
+            // 记录路径值
             path[step + 1] = i;
             dfs(i , step + 1 , sum + a[i]);
             st[i] = false;
@@ -51,8 +55,9 @@ int main() {
 
     int ans = 0;
     rep(i , 1 , n - 1)
-    rep(j , i + 1 , n) cin >> g[i][j];
+        rep(j , i + 1 , n) cin >> g[i][j];
 
+    // 枚举每一个起点
     rep(i , 1 , n){
         st[i] = true;
         path[1] = i;
