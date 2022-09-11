@@ -16,6 +16,10 @@ const double EPS = 1e-6;
 
 int main(){
 	FAST;
-	
+	double R , a , b , c , d;
+	cin >> R >> a >> b >> c >> d;
+	double x = a - R + 2 , y = b - R + 2;
+	double r = sqrt((x - c) * (x - c) + (y - d) * (y - d));
+	printf("%.6lf %.6lf %.6lf" , x , y , r);
 	return 0;
 }

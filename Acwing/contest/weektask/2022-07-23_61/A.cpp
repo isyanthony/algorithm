@@ -16,6 +16,14 @@ const double EPS = 1e-6;
 
 int main(){
 	FAST;
-	
+	int n;
+	cin >> n;
+	while(n--){
+		LL a , b , c , ans;
+		cin >> a >> b >> c;
+		ans = a + b + c;
+		ans >>= 1;
+		cout << ans << endl;
+	}
 	return 0;
 }

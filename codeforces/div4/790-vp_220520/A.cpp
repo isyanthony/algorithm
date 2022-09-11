@@ -14,8 +14,20 @@ const int INF = 0x3f3f3f3f;
 const int MINF = 0x3f;
 const double EPS = 1e-6;
 
+int n;
 int main(){
 	FAST;
-	
+	cin >> n;
+	while(n--){
+		string t;
+		cin >> t;
+		string a = t.substr(0 , 3) , b = t.substr(3 , 3);
+		int as = 0 , bs = 0;
+		for(int i = 0 , j = 3 ; i < 3 ; i++){
+			as += (a[i] - '0');
+			bs += (b[i] - '0');
+		}
+		cout << (as == bs ? "YES" : "NO") << endl;
+	}
 	return 0;
 }

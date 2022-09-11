@@ -13,9 +13,20 @@ using namespace std;
 const int INF = 0x3f3f3f3f;
 const int MINF = 0x3f;
 const double EPS = 1e-6;
-
+const int N = 2e5 + 10;
+string s;
+unordered_map<string , int> m;
 int main(){
 	FAST;
-	
+	int n;
+	cin >> n;
+	while(n--){
+		cin >> s;
+		if(!m.count(s)) m[s] = -1;
+		m[s]++;
+		int x = m[s];
+		if(x) cout << s << "(" << x << ")" << endl;
+		else cout << s << endl; 
+	}
 	return 0;
 }
