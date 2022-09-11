@@ -13,9 +13,16 @@ using namespace std;
 const int INF = 0x3f3f3f3f;
 const int MINF = 0x3f;
 const double EPS = 1e-6;
-
+int T;
 int main(){
 	FAST;
-	
+	cin >> T;
+	while(T--){
+		LL n;
+		cin >> n;
+		LL mod = n % 3;
+		if(mod == 0) cout << "good team!" << endl;
+		else cout << "so sad!" << endl;
+	}
 	return 0;
 }

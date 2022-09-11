@@ -13,9 +13,18 @@ using namespace std;
 const int INF = 0x3f3f3f3f;
 const int MINF = 0x3f;
 const double EPS = 1e-6;
-
+int n , m;
 int main(){
 	FAST;
-	
+	cin >> m >> n;
+	int ans = -1;
+	if(n == 0 && m == 0) ans = 0;
+    else if(n == 0 && m != 0) ans = -1;
+    else {
+        ans = m / n;
+        if(m % n) ans++;
+    }
+    
+	cout << ans << endl;
 	return 0;
 }

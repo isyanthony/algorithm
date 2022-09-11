@@ -18,20 +18,25 @@ int a[N];
 int main(){
 	int n;
 	FAST;
+	int a[] = {5 , 3 , 2 , 2 , 1 , 0};
 	cin >> n;
-	rep(i , 1 , n) cin >> a[i];
 
-	sort(a + 1 , a + n + 1);
-    int l =  n - (n - 1) / 2 , r = n - (n - 1) / 2 + 1;
-	LL ans = 0LL;
-    int len = 0;
-	while(len < n){
-		if(len > 1 && len % 2 == 0) ans = 1LL * ans * a[r] % MOD , r++;
-		else ans = (ans + a[l]) % MOD , l--;
-        len++;
+	int l = 0 , r = 6;
+	// 逆序中查找第一个大于a[i]的值的下标
+	// while(l < r){
+		// int mid = (l + r + 1) >> 1;
+	    // if(a[mid] > n) l = mid;
+	    // else r = mid - 1; 
+	// }
+	
+	// 逆序中查找第一个小于a[i]的值的下标	
+	while(l < r){
+		int mid = (l + r ) >> 1;
+	    if(a[mid] < n) r = mid;
+	    else l = mid + 1; 
 	}
 
-	cout << ans % MOD << endl;
+	cout << l << endl;
 	return 0;
 
 }

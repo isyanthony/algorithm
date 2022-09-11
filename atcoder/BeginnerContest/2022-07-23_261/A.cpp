@@ -16,6 +16,11 @@ const double EPS = 1e-6;
 
 int main(){
 	FAST;
-	
+	int a , b , c , d;
+	cin >> a >> b >> c >> d;
+	if(a >= c) swap(a , c) , swap(b , d);
+	if(c >= b) cout << 0 << endl;
+	else if(c <= b && d <= b) cout << abs(d - c) << endl;
+	else cout << abs(c - b) << endl;
 	return 0;
 }

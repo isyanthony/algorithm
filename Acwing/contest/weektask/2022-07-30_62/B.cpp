@@ -13,9 +13,28 @@ using namespace std;
 const int INF = 0x3f3f3f3f;
 const int MINF = 0x3f;
 const double EPS = 1e-6;
+unordered_map<int , int> cnt;
+LL n , m;
+
+void decrease(){
+	rep(i , 1 , n){
+		cnt[i]--;
+		if(cnt[i] == 0) cnt.erase(i);
+	}
+}
 
 int main(){
 	FAST;
-	
+	cin >> n >> m;
+	rep(i , 1 , m){
+		int tmp;
+		cin >> tmp;
+		cnt[tmp]++;
+		int sz = cnt.size();
+		if(sz == n){
+			cout << 1;
+			decrease();
+		}else cout << 0;
+	}
 	return 0;
 }
